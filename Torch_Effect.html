@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torch effect using html5 and css3</title>
+<!-- Lets do inline css3 -->
+<Style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: none;
+    }
+    .image, .torch{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .image{
+        filter: brightness(15%);
+    }
+    .torch{
+        clip-path: circle(80px at 0 0);
+    }
+</Style>
+</head>
+<body>
+    <div class="container">
+        <div class="image"></div>
+        <div class="torch"></div>
+    </div>
+</body>
+<!-- Script to perfom the torch effect -->
+<script>
+    const container = document.querySelector(".container");
+    container.addEventListener("mousemove",(e)=>{
+        const torch = document.querySelector(".torch");
+        torch.style.clipPath = `circle(100px at ${e.offsetX}px ${e.offsetY}px)`;
+    })
+</script>
+</html>
+Thankyou for watching this video please do like share and comment and don't forget to subscribe the channel
+all the code will be posted to my GitHub profile... So check it out... 
+Thankyou...
